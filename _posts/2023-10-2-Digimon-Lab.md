@@ -87,4 +87,10 @@ This code actually did work sometimes -- however, it would break whenever I ran 
 
 The code that I ended up going with is, unfortunately, not universally applicable, but works for this specific task. Because we are looking for a team of up to 3 digimon, I programmed the code so that the team would have exactly 3 members. Because the maximum memory is 15 and the minimum attack is 300, I iterated through the reader, picking out all of the digimon that had a memory less than or equal to 5, and an attack greater than or equal to 100, and appending them to a list. Once I had that list, I simply chose the first three in the list and assigned them as my team. 
 
+## Other Takeaways and Learnings
 
+Through this lab, I also was able to explore more about opening files and using dictionaries. One persistent problem that I kept running into was how to restart iteration at the beginning of the csv file, or the reader. I was originally using the seek() function to bring the position back to the start of the file; however, this did not work because seek() bases positions off of characters, not rows or keys. Thus, I was having a hard time converting strings into floats and finding the correct key-value pairs.
+
+Then, I tried to create a function that would use a "with" statement to open the csv file, and call that whenever I wanted to reset. However, because of indentation, I could not call this function within another function successfully without the file being closed. In the end, I decided to just copy and paste the same "with" statement whenever I needed it and coding whatever I needed within the "with" statement (with proper indentation).
+
+Overall, this was a very fun lab, and I'm curious to know if there is a better way of solving the team problem!
