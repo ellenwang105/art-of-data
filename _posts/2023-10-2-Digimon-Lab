@@ -2,11 +2,10 @@
 layout: post
 title: Sample post to learn markdown tips
 subtitle: There's lots to learn!
-gh-repo: daattali/beautiful-jekyll
+gh-repo: ellenwang105/art-of-data
 gh-badge: [star, fork, follow]
 tags: [test]
 comments: true
-permalink: https://ellenwang105.github.io/art-of-data/digimon-lab
 ---
 
 In this lab, I used the DictReader() function to create a reader for the csv file which functioned like a list of dictionaries. 
