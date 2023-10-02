@@ -8,7 +8,11 @@ tags: [test]
 comments: true
 ---
 
-In this lab, I used DictReader() to create a reader for the csv file, which functioned like a list of dictionaries, where each dictionary contained all of the information for each digimon. 
+**Author:** Ellen Wang
+
+**Collaborators:** Izzy Fic, Emma Chang, Feingold (No code was shared, but we were able to talk through ideas for certain problems and ask for insight when we could not figure out why an error was showing up)
+
+In this lab, I used DictReader() to create a reader for the csv file, which functioned like a list of dictionaries, where each dictionary contained all of the information for each digimon and allowed me to iterate through the information. 
 
 ## Finding the Average Speed
 
