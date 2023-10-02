@@ -9,3 +9,7 @@ In this lab, I used the DictReader() function to create a reader for the csv fil
 ## Finding the Average Speed
 
 For me, this task felt very intuitive. First, I thought about how an average is calculated, which is by adding up all values and dividing by the number of values. Then, I iterated through the csv file by using a "for" loop. For every dictionary in the reader, I appended the value corresponding to the key "Spd" to a list that contained all of the speeds of each digimon. Lastly, I added up all the values in the list, and divided by the total length, which gave me the average speed.
+
+## Finding the number of Digimon with a certain attribute
+
+For this task, I created a function that took in two parameters: one that would be the type of attribute that we were looking for (ex. "Type"), and another that was the specific attribute (ex. "Vaccine"). Then, I created a variable that represented the number of digimon that had a specific attribute of that type. Next, I iterated through all of the dictionaries in the reader, and if the value of the key was equal to the specific attribute we were looking for, 1 was added to the number of digimon with that attribute.
