@@ -1,14 +1,14 @@
 ---
 layout: post
-title: digimon
-subtitle: There's lots to learn!
+title: Digimon Lab
+author: Ellen Wang
 gh-repo: ellenwang105/art-of-data
 gh-badge: [star, fork, follow]
 tags: [test]
 comments: true
 ---
 
-In this lab, I used the DictReader() function to create a reader for the csv file which functioned like a list of dictionaries. 
+In this lab, I used DictReader() to create a reader for the csv file, which functioned like a list of dictionaries, where each dictionary contained all of the information for each digimon. 
 
 ## Finding the Average Speed
 
@@ -17,3 +17,74 @@ For me, this task felt very intuitive. First, I thought about how an average is 
 ## Finding the number of Digimon with a certain attribute
 
 For this task, I created a function that took in two parameters: one that would be the type of attribute that we were looking for (ex. "Type"), and another that was the specific attribute (ex. "Vaccine"). Then, I created a variable that represented the number of digimon that had a specific attribute of that type. Next, I iterated through all of the dictionaries in the reader, and if the value of the key was equal to the specific attribute we were looking for, 1 was added to the number of digimon with that attribute.
+
+## Finding an optimal team
+
+When I first read the task, I didn't have a clear way that I wanted to approach the problem. I had a few ideas that I wanted to try, but I was totally sure which would be the most efficient.
+
+My initial instinct was to iterate through the reader 3 times using nested for loops, checking every time if the digimon combination would work. But I quickly realized that this was highly inefficient, and I was also having trouble breaking the loop at the right time.
+
+Next, I had an idea of picking two random Digimon, and finding a third one that would meet the memory and attack requirements when added onto a team with the first two. This was actually the approach that took me the most amount of time, and I think I was quite close to making it work in the end. Here was the code that I wrote:
+
+~~~
+def choose_digi():
+    with open("datasets/digimon.csv", "r") as f:
+        reader = csv.DictReader(f)
+    
+        digi1 = random.randint(1,249) #Change to length
+        digi2 = random.randint(1,249)
+        
+        name_team(digi1,digi2)
+
+def name_team():
+    
+    with open("datasets/digimon.csv", "r") as f:
+        reader = csv.DictReader(f)
+    
+        total_memory = 0
+        total_atk = 0
+        
+        
+        team_digi = []
+        for row in reader:
+            if float(row["Number"]) == player1 or float(row["Number"]) == player2:
+                team_digi.append(row)
+    
+        #print(team_digi)
+        
+        for i in team_digi:
+            total_memory += float(i["Memory"])
+            total_atk += float(i["Atk"])
+        
+        if total_memory >= 15:
+            team_digi = []
+            choose_digi()
+        
+    with open("datasets/digimon.csv", "r") as f:
+        reader = csv.DictReader(f)
+                        
+        for row in reader:
+            if total_memory + float(row["Memory"]) <= 15 and total_atk + float(row["Atk"]) >= 300:
+                team_digi.append(row)
+                break
+            
+        if len(team_digi) == 2:
+            choose_digi()
+            
+        final_memory = 0
+        final_atk = 0
+        for i in team_digi:
+            final_memory += float(i["Memory"])
+            final_atk += float(i["Atk"])
+        
+    print(team_digi)
+    print("This team of Digimon has a total memory of " + str(final_memory) + " and a total attack of " + str(final_atk))
+~~~
+
+My idea was to first call the choose_digi function, which would randomly select two digimon out of the full list. Then, the name_team function would check whether those first two digimon met the attack and memory requirements, and if they didn't, the choose_digi function would need to be recalled again to generate two new random digimon. Afterwards, the computer would iterate through the reader, looking for a third digimon that would make the attack exceed 300 while keeping the memory below 15.
+
+This code actually did work sometimes -- however, it would break whenever I ran the code twice in a row, and sometimes it would not even find a third digimon that would satisfy the requirements. I spent a lot of time trying to make this work, but in the end I resorted to a simpler method.
+
+The code that I ended up going with is, unfortunately, not universally applicable, but works for this specific task. Because we are looking for a team of up to 3 digimon, I programmed the code so that the team would have exactly 3 members. Because the maximum memory is 15 and the minimum attack is 300, I iterated through the reader, picking out all of the digimon that had a memory less than or equal to 5, and an attack greater than or equal to 100, and appending them to a list. Once I had that list, I simply chose the first three in the list and assigned them as my team. 
+
+
