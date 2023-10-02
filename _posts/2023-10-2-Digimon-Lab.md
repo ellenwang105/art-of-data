@@ -4,7 +4,7 @@ title: Digimon Lab
 author: Ellen Wang
 gh-repo: ellenwang105/art-of-data
 gh-badge: [star, fork, follow]
-tags: [test]
+tags: [digimon]
 comments: true
 ---
 
@@ -14,7 +14,7 @@ comments: true
 
 ![Digimon](https://upload.wikimedia.org/wikipedia/en/4/43/Digimon_Digital_Monsters_Season_1_DVD_Cover.png)
 
-https://en.wikipedia.org/wiki/Digimon_Adventure_%281999_TV_series%29
+(https://en.wikipedia.org/wiki/Digimon_Adventure_%281999_TV_series%29)
 
 In this lab, I used the csv library and the DictReader() function (https://docs.python.org/3/library/csv.html) to create a reader for the csv file, where each dictionary in the reader contained all of the information for one digimon and allowed me to iterate through the information. 
 
