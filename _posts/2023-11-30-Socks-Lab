@@ -1,0 +1,18 @@
+---
+layout: post
+title: Animal Crossing Socks Lab
+tags: [Socks]
+comments: true
+---
+
+**Author:** Ellen Wang
+**Collaborators:** Emma Chang, Izzy Fic, Aydan Ergin, Feingold
+
+In this lab, I used an API to obtain data about Animal Crossing Socks, and then analyzed various aspects of the sock data. 
+
+To obtain data from the API, I used the requests.get function. The base URL and endpoint were constant, and in the payload, I included the API key to make sure that I was authorized to access the server. Then, I realized that the idx parameter only lets you access individual rows at for each time that the requests.get function is called. Therefore, created a "for" loop to iterate through every row of the index and retrieve data each time.
+
+To determine which type of sock has the most variations, I first created a list of all the names of the socks, by iterating through each row and adding the sock name if it did not already exist in the list. Then, I also added these sock names as keys to a dictionary that would contain sock names as keys and the number of variations for that sock as a value. I realized that each time a sock of the same type comes up, the variation is different. So, I iterated through the data again, adding one to the number of variations of the type of sock that the item was.
+
+To figure out how many socks of each color there were, I followed a similar process. First, I created a list of all the possible sock colors by iterating through each sock and adding its color 1 or color 2 to the list if either one was not already in it. Next, I created a dictionary with sock colors as keys and number of socks with that color as values. Lastly, I iterated through the socks again, and I added 1 to the key value of the corresponding sock color. To account for whether or not the color 1 was the same as color 2 for a specific sock, I only added 1 to the key value for sock 2 if it was different from color 1.
+
