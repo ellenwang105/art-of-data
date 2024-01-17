@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Lab 3
+title: Groundhog Day Analysis
 tags: [lab, dataset]
 comments: true
 cover-img: /assets/img/groundhog.jpeg
