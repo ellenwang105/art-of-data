@@ -12,7 +12,7 @@ By analyzing this dataset, I hoped to find whether or not the groundhog's predic
 
 First, I created dataframes for each prediction outcome (no shadow, full shadow, partial shadow). The majority of results predicted a "Full Shadow," which was interesting to me - maybe Groundhog day is too early in the year and an early spring is always unlikely? Then, I used Seaborn to visualize histogram plots of the February and March average temperatures for each prediction outcome. For the Full Shadow prediction, February and March Average Temperatures were pretty normally distributed. However, possibly due to the small amount of data, the temperatures for a no shadow prediction looked to be relatively uniform, which was surprising.
 
-![/assets/img/Full Shadow February.png]
+![plot](https://ellenwang105.github.io/art-of-data/assets/img/Full Shadow February.png)
 
 Next, to address my main objective of figuring out whether or not Phil's predictions have any value, I calculated the mean temperatures for each prediction. By using these numbers, it seemed that there was a slight correlation between the prediction and Febraury temperatures, but the March temperature means were pretty similar.
 
