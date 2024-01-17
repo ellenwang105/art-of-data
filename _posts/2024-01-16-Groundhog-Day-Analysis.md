@@ -29,11 +29,11 @@ Next, to address my main objective of figuring out whether or not Phil's predict
 
 I also created a scatter plot of year vs. February Average Temperature, with color-coded points to indicate the prediction. Consistent with the mean of the February Average Temperatures, No Shadow temperatures tended to be higher than Full Shadow Temperatures.
 
-![plot2](/assets/img/Scatter_Plot_February.png)
+![plot2](https://ellenwang105.github.io/art-of-data/assets/img/Scatter_Plot_February.png)
 
 However, with a scatter plot of the March Average Temperatures, it seemed like there was a correlation between the prediction and temperature, which was inconsistent with my conclusions using the mean value, demonstrating that the mean is not always the best way of analyzing data, as a lot of information is lost.
 
-![plot3](/assets/img/Scatter_Plot_March.png)
+![plot3](https://ellenwang105.github.io/art-of-data/assets/img/Scatter_Plot_March.png)
 
 With these plots, there seemed to be a very slight upwards trajectory of temperature over time, but not enough to make any concrete conclusions.
 
